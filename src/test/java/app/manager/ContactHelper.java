@@ -36,4 +36,10 @@ public void selectContacts(){
   public void gotoHome() {
     click(By.linkText("home"));
   }
+  public void editContact() {
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+  public void updateContact(){
+    click(By.xpath("//div[@id='content']/form/input[22]"));
+  }
 }
