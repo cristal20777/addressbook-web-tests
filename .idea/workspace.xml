@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b5e229e-8665-4a96-a590-faf0cd8f6e36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/GroupModificationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ContactDeletionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +72,7 @@
       <recent name="ru.stqa.pft.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupModificationTests">
-    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.stqa.pft.addressbook.GroupCreationTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="TestNG.ContactDeletionTests">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -105,6 +83,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.stqa.pft.addressbook" />
       <option name="MAIN_CLASS_NAME" value="tests.ContactCreationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactDeletionTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ContactDeletionTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -165,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactDeletionTests" />
         <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.GroupDeletionTests" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="Gradle.GroupCreationTests" />
       </list>
     </recent_temporary>
   </component>
