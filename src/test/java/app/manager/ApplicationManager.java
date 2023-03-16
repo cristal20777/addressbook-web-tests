@@ -52,9 +52,7 @@ public class ApplicationManager {
     wd.findElement(By.linkText("Logout")).click();
   }
 
-  public void gotohome() {
-    wd.findElement(By.linkText("home")).click();
-  }
+
 
   public GroupHelper getGroupHelper() {
     return groupHelper;
