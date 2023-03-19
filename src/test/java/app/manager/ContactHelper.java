@@ -61,10 +61,13 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(By.xpath("//td/input"));
   }
 
+
+
+
   public void createContact(ContactData contact) {
     gotoFormNewContact();
-    fillContactForm(contact,true);
+    fillContactForm(contact, true);
     enterContactCreation();
   }
+  }
 
-}
