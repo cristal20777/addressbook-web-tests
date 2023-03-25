@@ -16,5 +16,6 @@ public class ContactModificationTests extends TestBase {
     app.getcontactHelper().fillContactForm(new ContactData("34567", "23456", "dfg", "dfg", "dfgdf", null), false);
     app.getcontactHelper().updateContact();
 
+
   }
 }

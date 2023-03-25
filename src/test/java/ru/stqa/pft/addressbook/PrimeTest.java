@@ -7,11 +7,14 @@ import ru.stqa.pft.sandbox.Primes;
 public class PrimeTest {
   @Test
   public void testPrimes() {
-    Assert.assertTrue(Primes.isPrime(Integer.MAX_VALUE));
+    Assert.assertTrue(Primes.isPrimeFast(Integer.MAX_VALUE));
   }
+
 
   @Test
   public void testNonPrimes() {
     Assert.assertFalse(Primes.isPrime(Integer.MAX_VALUE - 2));
   }
+
+
 }
