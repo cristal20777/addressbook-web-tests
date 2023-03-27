@@ -1,5 +1,6 @@
 package app.manager;
 
+import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.openqa.selenium.By.cssSelector;
 
 public class GroupHelper extends HelperBase {
   public GroupHelper(WebDriver wd) {
@@ -66,7 +69,7 @@ public class GroupHelper extends HelperBase {
 
   public List<GroupData> getGroupList() {
 List<GroupData> groups= new ArrayList<GroupData>();
-List<WebElement> elements=wd.findElements(By.cssSelector("span.group"));
+List<WebElement> elements=wd.findElements(cssSelector("span.group"));
 for (WebElement element : elements) {
   String name = element.getText();
   String id = element.findElement(By.tagName("input")).getAttribute("value");
@@ -76,4 +79,6 @@ for (WebElement element : elements) {
 }
 return groups;
   }
-}
+
+  }
+
