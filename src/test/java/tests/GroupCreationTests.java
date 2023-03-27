@@ -16,6 +16,13 @@ public class GroupCreationTests extends TestBase{
     app.getGroupHelper().createGroup (group);
     List<GroupData> after =app.getGroupHelper().getGroupList();
     Assert.assertEquals(after.size(), before.size() +1);
+
+    int max=0;
+    for (GroupData g: after) {
+      if (g.getId() > max) {
+        max=g.getId();
+      }
+    }
   before.add(group);
     Assert.assertEquals(new HashSet<Object>(before),new HashSet<Object>(after));
 
