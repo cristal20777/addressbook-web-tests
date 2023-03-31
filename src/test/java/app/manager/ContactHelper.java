@@ -68,20 +68,33 @@ public class ContactHelper extends HelperBase {
     fillContactForm(contact, true);
     enterContactCreation();
   }
-
+  public void modifyContact( ContactData contact) {
+    editContact();
+    fillContactForm(contact, false);
+    updateContact();
+    gotoHome();
+  }
+  public void editContactById(int id){
+    wd.findElements(By.xpath("//input[@value='" + id + "']/..//td/a/img[@alt='Edit']"));
+  }
+  public void delete(int index) {
+    selectContacts(index);
+    deleteSelectedContact();
+    gotoHome();
+  }
   public int getContactCount() {
     return wd.findElements(By.name("selected[]")).size();
   }
 
   public List<ContactData> getContactList() {
     List<ContactData> contacts = new ArrayList<ContactData>();
-    List<WebElement> elements = wd.findElements(By.name("entry"));
-    for (WebElement element : elements) {
-      String lastName = String.valueOf(element.findElement(By.xpath(".//td[2]")).getText());
-      String firstName = String.valueOf(element.findElement(By.xpath(".//td[3]")).getText());
-      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      ContactData contact=new ContactData (id,"Михаил", "Голик", "Москва, Сретенский бульвар 17-64", "89600267885", "golikmisha1@mail.ru",null);
-      contacts.add(contact);
+      List<WebElement> rows = wd.findElements(By.name("entry"));
+      for (WebElement row : rows) {
+        List<WebElement> td = row.findElements(By.tagName("td"));
+      String lastname = td.get(1).getText();
+      String firstname = td.get(2).getText();
+      int id = Integer.parseInt(row.findElement(By.tagName("input")).getAttribute("value"));
+      contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
     }
       return contacts;
     }

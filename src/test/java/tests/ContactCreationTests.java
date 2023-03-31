@@ -13,21 +13,22 @@ import java.util.List;
 public class ContactCreationTests extends TestBase {
   @Test(enabled = false)
   public void testContactCreation() throws Exception {
-    List<ContactData> before = app.getContactHelper().getContactList();
-    if (! app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup (new GroupData("test1",null,null));
+    List<ContactData> before = app.Contact().getContactList();
+    if (! app.Group().isThereAGroup()) {
+      app.Group().create(new GroupData().withName("test1"));
     }
-    ContactData contact = new ContactData ( "Михаил", "Голик", "Москва, Сретенский бульвар 17-64", "89600267885", "golikmisha1@mail.ru","test1");
-    app.getContactHelper().createContact(contact);
-    app.getNavigationHelper().gotoHomePage();
-    List<ContactData> after = app.getContactHelper().getContactList();
+    ContactData contact = new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomephone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
+    app.Contact().createContact(contact);
+    app.goTo().gotoHomePage();
+    List<ContactData> after = app.Contact().getContactList();
     Assert.assertEquals(after.size(), before.size()+1);
 
-    contact.setId(after. stream().max((o1, o2) -> Integer.compare(o1.getId(),o2.getId())).get().getId());
-    before.add(contact);
+
+
     Comparator<? super ContactData> byId=(c1,c2)-> Integer.compare (c1.getId(),c2.getId());
     before.sort(byId);
     after.sort(byId);
+    before.add(contact);
     Assert.assertEquals(new HashSet<Object>(before),new HashSet<Object>(after));
 
   }

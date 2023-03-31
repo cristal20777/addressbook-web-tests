@@ -1,6 +1,5 @@
 package app.manager;
 
-import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -50,13 +49,24 @@ public class GroupHelper extends HelperBase {
     click(By.name("update"));
   }
 
-  public void createGroup(GroupData group) {
+  public void create(GroupData group) {
     initGroupCreation();
     fillGroupForm(group);
     submitGroupCreation();
     returnToGroupPage();
   }
-
+  public  void modify(int index, GroupData group) {
+    selectedGroup(index);
+    initgroupModification();
+    fillGroupForm(group);
+    submitGroupModification();
+    returnToGroupPage();
+  }
+  public  void delete(int index) {
+    selectedGroup(index);
+    deleteSelectedGroup();
+    returnToGroupPage();
+  }
   public boolean isThereAGroup() {
     return isElementPresent(By.name("selected[]"));
 
@@ -67,14 +77,13 @@ public class GroupHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<GroupData> getGroupList() {
+  public List<GroupData> List() {
 List<GroupData> groups= new ArrayList<GroupData>();
 List<WebElement> elements=wd.findElements(cssSelector("span.group"));
 for (WebElement element : elements) {
   String name = element.getText();
   int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-  GroupData group = new GroupData(id, name, null, null);
-  groups.add(group);
+  groups.add(new GroupData().withId(id).withName(name));
 
 }
 return groups;
