@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 import org.openqa.selenium.*;
 
 import java.util.List;
+import java.util.Set;
 
 
 public class GroupDeletionTests extends TestBase {
@@ -20,12 +21,13 @@ public class GroupDeletionTests extends TestBase {
   @Test
   public void testGroupDeletion() throws Exception {
 
-    List<GroupData> before=app.Group().List();
+    Set<GroupData> before=app.Group().all();
+    GroupData  deletedGroup=before.iterator().next();
     int index=before.size() - 1;
-    app.Group().delete(index);
-    List<GroupData> after =app.Group().List();
+    app.Group().delete(deletedGroup);
+    Set<GroupData> after =app.Group().all();
     Assert.assertEquals(after.size(), before.size() - 1);
-    before.remove(index);
+    before.remove(deletedGroup);
     Assert.assertEquals(before,after);
   }
 
