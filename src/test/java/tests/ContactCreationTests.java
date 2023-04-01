@@ -14,7 +14,7 @@ import java.util.Set;
 public class ContactCreationTests extends TestBase {
   @Test
   public void testContactCreation() throws Exception {
-    List<ContactData> before = app.Contact().getContactList();
+    Set<ContactData> before = app.Contact().all();
     if (! app.Group().isThereAGroup()) {
       app.Group().create(new GroupData().withName("test1"));
     }
@@ -24,7 +24,7 @@ public class ContactCreationTests extends TestBase {
     Set<ContactData> after = app.Contact().all();
     Assert.assertEquals(after.size(), before.size()+1);
     contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
-    Assert.assertEquals(new HashSet<Object>(before),new HashSet<Object>(after));
+    Assert.assertEquals(before,after);
 
   }
 }
