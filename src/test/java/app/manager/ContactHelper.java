@@ -69,13 +69,13 @@ public class ContactHelper extends HelperBase {
     enterContactCreation();
   }
   public void modifyContact( ContactData contact) {
-    editContact();
+    editContactById(contact.getId());
     fillContactForm(contact, false);
     updateContact();
     gotoHome();
   }
   public void editContactById(int id){
-    wd.findElements(By.xpath("//input[@value='" + id + "']/..//td/a/img[@alt='Edit']"));
+    click(By.xpath("//input[@value='" + id + "']/../../td/a/img[@alt='Edit']"));
   }
   public void delete(int index) {
     selectContacts(index);
