@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3b5e229e-8665-4a96-a590-faf0cd8f6e36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/model/ContactData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/model/ContactData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactModificationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/GroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/GroupData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/GroupCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/GroupCreationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +78,7 @@
       <recent name="ru.stqa.pft.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactModificationTests">
+  <component name="RunManager" selected="TestNG.ContactCreationTests">
     <configuration name="ContactCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -146,7 +148,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -155,7 +157,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="MAIN_CLASS_NAME" value="tests.GroupCreationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -164,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactCreationTests" />
+        <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.ContactModificationTests" />
         <item itemvalue="TestNG.ContactModificationTests.testContactModification" />
         <item itemvalue="TestNG.ContactDeletionTests" />
-        <item itemvalue="TestNG.tests" />
-        <item itemvalue="TestNG.ContactCreationTests" />
       </list>
     </recent_temporary>
   </component>

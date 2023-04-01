@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -98,5 +99,17 @@ public class ContactHelper extends HelperBase {
     }
       return contacts;
     }
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<ContactData>();
+    List<WebElement> rows = wd.findElements(By.name("entry"));
+    for (WebElement row : rows) {
+      List<WebElement> td = row.findElements(By.tagName("td"));
+      String lastname = td.get(1).getText();
+      String firstname = td.get(2).getText();
+      int id = Integer.parseInt(row.findElement(By.tagName("input")).getAttribute("value"));
+      contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+    }
+    return contacts;
+  }
   }
 
