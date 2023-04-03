@@ -11,23 +11,23 @@ public class Contacts extends ForwardingSet<ContactData> {
   public Contacts(Contacts contacts) {
     this.delegate = new HashSet<ContactData>(contacts.delegate);
   }
-  public Contacts(Contacts contacts) {
+  public Contacts() {
     this.delegate = new HashSet<ContactData>();
   }
 
   @Override
   protected Set<ContactData> delegate() {
-    return null;
+    return delegate;
   }
 
-  public Groups withAdded(ContactData contact) {
+  public Contacts withAdded(ContactData contact) {
     Contacts contacts= new Contacts(this);
-    contacts.add(contacts);
+    contacts.add(contact);
     return contacts;
   }
-  public Groups without(ContactData contact) {
+  public Contacts without(ContactData contact) {
     Contacts contacts= new Contacts(this);
-    contacts.remove(contacts);
+    contacts.remove(contact);
     return contacts;
   }
 }

@@ -1,6 +1,9 @@
 package tests;
 
 import model.GroupData;
+import model.Groups;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,15 +23,13 @@ public class GroupModificationTests extends TestBase {
 
   @Test
   public void testGroupModification() {
-    Set<GroupData> before = app.Group().all();
+    Groups before = app.Group().all();
     GroupData modifiedGroup=before.iterator().next();
     GroupData group = new GroupData().withId(modifiedGroup.getId()).withName("test1").withHeader("test0").withFooter("test4");
     app.Group().modify(group);
-    Set<GroupData> after = app.Group().all();
+    Groups after = app.Group().all();
     Assert.assertEquals(after.size(), before.size());
-    before.remove(modifiedGroup);
-    before.add(group);
-    Assert.assertEquals(before, after);
+    MatcherAssert.assertThat(after, CoreMatchers.equalTo(before.without(modifiedGroup).withAdded(group)));
   }
 
 

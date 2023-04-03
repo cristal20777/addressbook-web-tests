@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.openqa.selenium.By.cssSelector;
 
@@ -98,7 +96,7 @@ return groups;
   }
 
   public Groups all() {
-    Groups groups= new Groups;
+    Groups groups= new Groups();
     List<WebElement> elements=wd.findElements(cssSelector("span.group"));
     for (WebElement element : elements) {
       String name = element.getText();
