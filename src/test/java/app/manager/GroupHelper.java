@@ -1,6 +1,7 @@
 package app.manager;
 
 import model.GroupData;
+import model.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,8 +40,8 @@ public class GroupHelper extends HelperBase {
     click(By.name("delete"));
   }
 
-  public void selectedGroup(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
+  private void selectedGroupById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
   public void initgroupModification() {
@@ -57,18 +58,23 @@ public class GroupHelper extends HelperBase {
     submitGroupCreation();
     returnToGroupPage();
   }
-  public  void modify(int index, GroupData group) {
-    selectedGroup(index);
+  public  void modify(GroupData group) {
+    selectedGroupById(group.getId());
     initgroupModification();
     fillGroupForm(group);
     submitGroupModification();
     returnToGroupPage();
   }
-  public  void delete(int index) {
-    selectedGroup(index);
+
+  public void deleted(GroupData group) {
+    selectedGroupById(group.getId());
     deleteSelectedGroup();
     returnToGroupPage();
+
+
   }
+
+
   public boolean isThereAGroup() {
     return isElementPresent(By.name("selected[]"));
 
@@ -91,8 +97,8 @@ for (WebElement element : elements) {
 return groups;
   }
 
-  public Set<GroupData> all() {
-    Set<GroupData> groups= new HashSet<GroupData>();
+  public Groups all() {
+    Groups groups= new Groups;
     List<WebElement> elements=wd.findElements(cssSelector("span.group"));
     for (WebElement element : elements) {
       String name = element.getText();
@@ -102,5 +108,7 @@ return groups;
     }
     return groups;
   }
-  }
+
+
+}
 

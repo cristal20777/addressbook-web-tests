@@ -1,6 +1,7 @@
 package app.manager;
 
 import model.ContactData;
+import model.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -84,6 +85,15 @@ public class ContactHelper extends HelperBase {
     deleteSelectedContact();
     gotoHome();
   }
+  public void deleted(ContactData contact) {
+    selectContactById(contact.getId());
+    deleteSelectedContact();
+    gotoHome();
+  }
+  public void selectContactById(int id) {
+
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+  }
   public int getContactCount() {
     return wd.findElements(By.name("selected[]")).size();
   }
@@ -100,8 +110,9 @@ public class ContactHelper extends HelperBase {
     }
       return contacts;
     }
-  public Set<ContactData> all() {
-    Set<ContactData> contacts = new HashSet<ContactData>();
+
+  public Contacts all() {
+    Contacts contacts = new Contacts();
     List<WebElement> rows = wd.findElements(By.name("entry"));
     for (WebElement row : rows) {
       List<WebElement> td = row.findElements(By.tagName("td"));
@@ -112,5 +123,8 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
+
+  public void delete(ContactData deletedContact) {
   }
+}
 
