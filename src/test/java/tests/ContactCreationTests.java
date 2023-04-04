@@ -14,17 +14,32 @@ public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() throws Exception {
-    Contacts before = app.Contact().all();
-    if (! app.Group().isThereAGroup()) {
-      app.Group().create(new GroupData().withName("test1"));
+    Contacts before = app.contact().all();
+    if (! app.group().isThereAGroup()) {
+      app.group().create(new GroupData().withName("test1"));
     }
     ContactData contact = new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomephone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
-    app.Contact().createContact(contact);
+    app.contact().createContact(contact);
     app.goTo().gotoHomePage();
-    Contacts after = app.Contact().all();
-    assertThat(after.size(), equalTo(before.size()+1));
+    assertThat(app.contact().count(), equalTo(before.size()+1));
+    Contacts after = app.contact().all();
     contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
+    assertThat(after, equalTo(before.withAdded(contact)));
 
+  }
+
+  @Test
+  public void testBadContactCreation() throws Exception {
+    Contacts before = app.contact().all();
+    if (! app.group().isThereAGroup()) {
+      app.group().create(new GroupData().withName("test1"));
+    }
+    ContactData contact = new ContactData().withFirstname("Михаил'").withLastname("Голик").withAddress("fgfj").withHomephone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
+    app.contact().createContact(contact);
+    app.goTo().gotoHomePage();
+    assertThat(app.contact().count(), equalTo(before.size()));
+    Contacts after = app.contact().all();
+    contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
     assertThat(after, equalTo(before.withAdded(contact)));
 
   }

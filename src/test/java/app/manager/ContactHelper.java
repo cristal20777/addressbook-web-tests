@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -94,7 +92,7 @@ public class ContactHelper extends HelperBase {
 
     wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
-  public int getContactCount() {
+  public int count() {
     return wd.findElements(By.name("selected[]")).size();
   }
 
