@@ -32,9 +32,15 @@ public class ContactHelper extends HelperBase {
     String home=wd.findElement(By.name("home")).getAttribute("value");
     String mobile=wd.findElement(By.name("mobile")).getAttribute("value");
     String work=wd.findElement(By.name("work")).getAttribute("value");
+    String firstmail=wd.findElement(By.name("email")).getAttribute("value");
+    String secondmail=wd.findElement(By.name("email2")).getAttribute("value");
+    String thirdmail=wd.findElement(By.name("email3")).getAttribute("value");
+    String address=wd.findElement(By.name("address")).getAttribute("value");
     wd.navigate().back();
     return new ContactData().withId(contact.getId()).withFirstname(firstname).
-            withLastname(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+            withLastname(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).
+            withAddress(contact.getAddress()).withFirstMail(contact.getFirstMail())
+            .withSecondMail(contact.getSecondMail()).withThirdMail(contact.getThirdMail());
   }
   private void initContactModificationById (int id){
     wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s'] ", id))).click();
@@ -131,10 +137,12 @@ public class ContactHelper extends HelperBase {
       List<WebElement> cells = row.findElements(By.tagName("td"));
       String lastname = cells.get(1).getText();
       String firstname = cells.get(2).getText();
-      String[] phones = cells.get(5).getText().split("\n");
+      String allPhones= cells.get(5).getText();
+      String allEmails = cells.get(4).getText();
+      String address = cells.get(3).getText();
       int id = Integer.parseInt(row.findElement(By.tagName("input")).getAttribute("value"));
       contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname).
-              withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+              withAllPhones(allPhones).withAddress(address).withAllEmails(allEmails));
     }
     return contacts;
   }
