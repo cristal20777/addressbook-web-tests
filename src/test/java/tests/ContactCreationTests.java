@@ -18,7 +18,7 @@ public class ContactCreationTests extends TestBase {
     if (! app.group().isThereAGroup()) {
       app.group().create(new GroupData().withName("test1"));
     }
-    ContactData contact = new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomephone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
+    ContactData contact = new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
     app.contact().createContact(contact);
     app.goTo().gotoHomePage();
     assertThat(app.contact().count(), equalTo(before.size()+1));
@@ -34,7 +34,7 @@ public class ContactCreationTests extends TestBase {
     if (! app.group().isThereAGroup()) {
       app.group().create(new GroupData().withName("test1"));
     }
-    ContactData contact = new ContactData().withFirstname("Михаил'").withLastname("Голик").withAddress("fgfj").withHomephone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
+    ContactData contact = new ContactData().withFirstname("Михаил'").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail( "golikmisha1@mail.ru").withGroup("test2");
     app.contact().createContact(contact);
     app.goTo().gotoHomePage();
     assertThat(app.contact().count(), equalTo(before.size()));
