@@ -1,5 +1,6 @@
 package model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
@@ -18,6 +19,18 @@ public class ContactData {
   private String secondMail;
   private String thirdMail;
   private String allEmails;
+  private File photo;
+
+  public File withPhoto(File photo) {
+    this.photo = photo;
+    return photo;
+  }
+
+  public File getPhoto() {
+    return photo;
+  }
+
+
   public ContactData withAllPhones(String allPhones) {
     this.allPhones = allPhones;
     return this;
