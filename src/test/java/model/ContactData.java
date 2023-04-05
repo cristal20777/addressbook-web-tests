@@ -44,7 +44,7 @@ public class ContactData {
     return mobilePhone;
   }
   public String getWorkPhone() {
-    return homePhone;
+    return workPhone;
   }
   public String getAllPhones() {
     return allPhones;

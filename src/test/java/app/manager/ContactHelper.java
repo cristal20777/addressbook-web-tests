@@ -39,8 +39,8 @@ public class ContactHelper extends HelperBase {
     wd.navigate().back();
     return new ContactData().withId(contact.getId()).withFirstname(firstname).
             withLastname(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).
-            withAddress(contact.getAddress()).withFirstMail(contact.getFirstMail())
-            .withSecondMail(contact.getSecondMail()).withThirdMail(contact.getThirdMail());
+            withAddress(address).withFirstMail(firstmail)
+            .withSecondMail(secondmail).withThirdMail(thirdmail);
   }
   private void initContactModificationById (int id){
     wd.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s'] ", id))).click();
