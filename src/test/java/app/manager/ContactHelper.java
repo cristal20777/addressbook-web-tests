@@ -32,6 +32,7 @@ public class ContactHelper extends HelperBase {
     String home=wd.findElement(By.name("home")).getAttribute("value");
     String mobile=wd.findElement(By.name("mobile")).getAttribute("value");
     String work=wd.findElement(By.name("work")).getAttribute("value");
+    String fax=wd.findElement(By.name("fax")).getAttribute("value");
     String firstmail=wd.findElement(By.name("email")).getAttribute("value");
     String secondmail=wd.findElement(By.name("email2")).getAttribute("value");
     String thirdmail=wd.findElement(By.name("email3")).getAttribute("value");
@@ -39,7 +40,7 @@ public class ContactHelper extends HelperBase {
     wd.navigate().back();
     return new ContactData().withId(contact.getId()).withFirstname(firstname).
             withLastname(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).
-            withAddress(address).withFirstMail(firstmail)
+            withFaxPhone(fax).withAddress(address).withFirstMail(firstmail)
             .withSecondMail(secondmail).withThirdMail(thirdmail);
   }
   private void initContactModificationById (int id){

@@ -12,6 +12,7 @@ public class ContactData {
   private String homePhone;
   private String mobilePhone;
   private String workPhone;
+  private String faxPhone;
   private String email;
   private String group;
   private String allPhones;
@@ -58,6 +59,9 @@ public class ContactData {
   }
   public String getWorkPhone() {
     return workPhone;
+  }
+  public String getFaxPhone() {
+    return faxPhone;
   }
   public String getAllPhones() {
     return allPhones;
@@ -133,17 +137,19 @@ public class ContactData {
     this.workPhone = workPhone;
     return this;
   }
+  public ContactData withFaxPhone(String faxPhone) {
+    this.faxPhone = faxPhone;
+    return this;
+  }
 
   public ContactData withEmail(String email) {
     this.email = email;
     return this;
   }
-
   public ContactData withGroup(String group) {
     this.group = group;
     return this;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -151,7 +157,6 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname);
   }
-
   @Override
   public int hashCode() {
     return Objects.hash(id, firstname, lastname);
@@ -165,7 +170,6 @@ public class ContactData {
             ", lastname='" + lastname + '\'' +
             '}';
   }
-
   public int getId() {
     return id;
   }
