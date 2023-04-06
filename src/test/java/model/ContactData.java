@@ -21,9 +21,9 @@ public class ContactData {
   private String allEmails;
   private File photo;
 
-  public File withPhoto(File photo) {
+  public ContactData withPhoto(File photo) {
     this.photo = photo;
-    return photo;
+    return this;
   }
 
   public File getPhoto() {
