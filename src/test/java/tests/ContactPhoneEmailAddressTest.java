@@ -47,7 +47,7 @@ public class ContactPhoneEmailAddressTest extends TestBase{
   private String mergeAddress(ContactData contact) {
     return Stream.of(contact.getAddress()).filter((s) -> ! s.equals(""))
             .collect(Collectors.joining("\n"));}
-  
+
   public static String cleaned (String phone) {
     return phone.replaceAll("\\s","").replaceAll("-" + " + "+
             "()","");

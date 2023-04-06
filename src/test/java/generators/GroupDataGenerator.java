@@ -1,5 +1,6 @@
 package generators;
 
+import com.beust.jcommander.Parameter;
 import model.GroupData;
 
 import java.io.File;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GroupDataGenerator {
+@Parameter
+  public int count;
   public static void main (String[] args) throws IOException {
     int count = Integer.parseInt(args[0]);
     File file = new File (args[1]);
