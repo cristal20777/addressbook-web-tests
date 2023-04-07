@@ -51,13 +51,12 @@ public class ContactDataGenerator {
 
   private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
     System.out.println(new File(".").getAbsolutePath());
-    Writer writer = new FileWriter(file);
-    for (ContactData contact : contacts) {
-      writer.write(String.format("%s:%s:%s:%s:%s\n", contact.getFirstname(), contact.getLastname(),
-              contact.getAddress(), contact.getHomePhone(), contact.getEmail()));
-
+    try (Writer writer = new FileWriter(file)) {
+      for (ContactData contact : contacts) {
+        writer.write(String.format("%s:%s:%s:%s:%s\n", contact.getFirstname(), contact.getLastname(),
+                contact.getAddress(), contact.getHomePhone(), contact.getEmail()));
+      }
     }
-    writer.close();
   }
 
 
@@ -73,8 +72,8 @@ public class ContactDataGenerator {
   private void saveAsXml(List<ContactData> contacts, File file) throws IOException {
     XStream xstream = new XStream();
     String xml = xstream.toXML(contacts);
-    Writer writer = new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try (Writer writer = new FileWriter(file)) {
+      writer.write(xml);
+    }
   }
 }
