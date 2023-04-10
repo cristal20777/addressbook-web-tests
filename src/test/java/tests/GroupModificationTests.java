@@ -14,17 +14,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GroupModificationTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
-    app.goTo().GroupPage();
-    if (app.group().List().size()==0) {
+    if (app.db().groups().size()==0) {
+      app.goTo().GroupPage();
       app.group().create(new GroupData().withName("test2"));
     }
   }
 
   @Test
   public void testGroupModification() {
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     GroupData modifiedGroup=before.iterator().next();
     GroupData group = new GroupData().withId(modifiedGroup.getId()).withName("test1").withHeader("test0").withFooter("test4");
+    app.goTo().GroupPage();
     app.group().modify(group);
     assertThat(app.group().count(), equalTo(before.size()));
     Groups after = app.group().all();

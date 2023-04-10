@@ -34,7 +34,7 @@ public class GroupCreationTests extends TestBase {
   @Test(dataProvider = "validGroups")
   public void testGroupCreation(GroupData group) throws Exception {
     app.goTo().GroupPage();
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     app.group().create(group);
     assertThat(app.group().count(), equalTo(before.size() + 1));
     Groups after = app.group().all();
