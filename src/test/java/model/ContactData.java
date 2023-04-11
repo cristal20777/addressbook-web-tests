@@ -29,15 +29,21 @@ public class ContactData {
   private String mobilePhone;
   @Column(name="work")
   private String workPhone;
+  @Transient
   private String faxPhone;
+  @Column(name = "email")
   private String email;
   @Transient
   private String group;
   @Transient
   private String allPhones;
+  @Transient
   private String firstMail;
+  @Transient
   private String secondMail;
+  @Transient
   private String thirdMail;
+  @Transient
   private String allEmails;
   @Column(name="photo")
   private String photo;
