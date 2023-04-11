@@ -1,6 +1,6 @@
 package tests;
 
-import model.ContactData;
+
 import model.GroupData;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
