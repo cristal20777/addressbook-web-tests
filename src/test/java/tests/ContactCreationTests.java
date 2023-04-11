@@ -21,7 +21,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class ContactCreationTests extends TestBase {
-  
+
   @DataProvider
   public Iterator<Object[]> validContacts() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
