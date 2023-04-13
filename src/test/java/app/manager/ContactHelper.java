@@ -2,6 +2,7 @@ package app.manager;
 
 import model.ContactData;
 import model.Contacts;
+import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -149,7 +150,36 @@ public class ContactHelper extends HelperBase {
     return contacts;
   }
 
-  public void delete(ContactData deletedContact) {
+  public void remove (ContactData contact, GroupData group){
+  selectGroupRemove(group.getName());
+selectContactById(contact.getId());
+    removeFromGroup();
+
+  }
+  public void selectGroupRemove(String groupName) {
+    new Select(wd.findElement(By.name("group"))).selectByVisibleText(groupName);
+  }
+  public void removeFromGroup() {
+    wd.findElement(By.name("remove")).click();
+  }
+
+  public void toGroup() {
+    click(By.name("to_group"));
+  }
+
+  public void selectGroupFromList(int id) {
+    new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(id));
+  }
+
+
+  public void addToGroup() {
+    click(By.cssSelector("[value='Add to']"));
+  }
+
+  public void add(ContactData contact, GroupData group) {
+    selectContactById(contact.getId());
+    toGroup();
+    addToGroup();
   }
 }
 

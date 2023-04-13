@@ -195,4 +195,11 @@ public class ContactData {
   public int getId() {
     return id;
   }
+
+
+  public Object ToGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
+
 }

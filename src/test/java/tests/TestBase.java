@@ -1,6 +1,8 @@
 package tests;
 
 import app.manager.ApplicationManager;
+import model.ContactData;
+import model.Contacts;
 import model.GroupData;
 import model.Groups;
 import org.hamcrest.CoreMatchers;
@@ -35,6 +37,15 @@ public class TestBase {
       Groups uiGroups = app.group().all();
       assertThat(uiGroups, equalTo(dbGroups.stream()
               .map((g) -> new GroupData().withId(g.getId()).withName(g.getName()))
+              .collect(Collectors.toSet())));
+    }
+  }
+  public void verifyContactListInUI() {
+    if (Boolean.getBoolean("verifyUI")) {
+      Contacts dbContacts = app.db().contacts();
+      Contacts uiContacts = app.contact().all();
+      assertThat(uiContacts, equalTo(dbContacts.stream()
+              .map((c) -> new ContactData().withId(c.getId()).withFirstname(c.getFirstname()))
               .collect(Collectors.toSet())));
     }
   }
