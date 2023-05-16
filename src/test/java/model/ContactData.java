@@ -28,11 +28,14 @@ public class ContactData {
   @Column(name = "address")
   @Type(type = "text")
   private String address;
+  @Transient
   @Column(name = "home")
 
   private String homePhone;
+  @Transient
   @Column(name = "mobile")
   private String mobilePhone;
+  @Transient
   @Column(name = "work")
   private String workPhone;
   @Transient
@@ -52,8 +55,8 @@ public class ContactData {
   @Transient
   private String allEmails;
   @Column(name = "photo")
-  private String photo;
   @Transient
+  private String photo;
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name = "id"),
           inverseJoinColumns = @JoinColumn(name = "group_id"))

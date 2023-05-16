@@ -2,6 +2,7 @@ package model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -17,11 +18,13 @@ public class GroupData {
   @Column(name = "group_id")
   private int id = Integer.MAX_VALUE;
   @Column(name = "group_name")
+  //@Type(type = "text")
   private String name;
   @Column(name = "group_header")
+  @Type(type = "text")
   private String header;
   @Column(name = "group_footer")
-
+  @Type(type = "text")
   private String footer;
   @ManyToMany(mappedBy = "groups")
   private Set<ContactData> contacts = new HashSet<ContactData>();
