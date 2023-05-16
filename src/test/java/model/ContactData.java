@@ -13,7 +13,7 @@ import java.util.Set;
 @XStreamAlias("contact")
 @Entity
 @Table(name = "addressbook")
-@Type(type = "text")
+
 
 public class ContactData {
   @XStreamOmitField
@@ -23,8 +23,10 @@ public class ContactData {
   @Column(name = "firstname")
   private String firstname;
   @Column(name = "lastname")
+  //@Type(type = "text")
   private String lastname;
   @Column(name = "address")
+  @Type(type = "text")
   private String address;
   @Column(name = "home")
 
@@ -36,6 +38,7 @@ public class ContactData {
   @Transient
   private String faxPhone;
   @Column(name = "email")
+  @Type(type = "text")
   private String email;
 
   @Transient
@@ -50,6 +53,7 @@ public class ContactData {
   private String allEmails;
   @Column(name = "photo")
   private String photo;
+  @Transient
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name = "id"),
           inverseJoinColumns = @JoinColumn(name = "group_id"))
