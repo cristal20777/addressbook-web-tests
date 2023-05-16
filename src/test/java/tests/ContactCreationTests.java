@@ -3,8 +3,6 @@ package tests;
 import com.thoughtworks.xstream.XStream;
 import model.ContactData;
 import model.Contacts;
-import model.GroupData;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -25,7 +23,7 @@ public class ContactCreationTests extends TestBase {
   @DataProvider
   public Iterator<Object[]> validContacts() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
-    String xml="";
+    String xml = "";
     String line = reader.readLine();
     while (line != null) {
       xml += line;
@@ -35,7 +33,7 @@ public class ContactCreationTests extends TestBase {
     xstream.processAnnotations(ContactData.class);
     xstream.allowTypes(new Class[]{ContactData.class});
     List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
-    return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+    return contacts.stream().map((c) -> new Object[]{c}).collect(Collectors.toList()).iterator();
   }
 
   @Test(dataProvider = "validContacts")
@@ -45,7 +43,7 @@ public class ContactCreationTests extends TestBase {
     app.contact().createContact(contact);
     app.goTo().gotoHomePage();
     Contacts after = app.db().contacts();
-    assertThat(app.contact().count(), equalTo(before.size()+1));
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
     contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
     assertThat(after, equalTo(before.withAdded(contact)));
 
