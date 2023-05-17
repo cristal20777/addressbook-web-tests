@@ -1,0 +1,6 @@
+[node]
+detect-drivers = false
+[[node.driver-configuration]]
+display-name = "Firefox"
+stereotype = "{\"browserName\": \"firefox\"}"
+webdriver-executable = 'C:\windows\system32\geckodriver.exe'
