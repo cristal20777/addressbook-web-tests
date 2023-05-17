@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -171,9 +172,13 @@ selectContactById(contact.getId());
     new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(id));
   }
 
-
   public void addToGroup() {
     click(By.cssSelector("[value='Add to']"));
+  }
+
+  public void contactAddToGroup(String name) {
+    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(name);
+    click(By.xpath("//input[@name='add']"));
   }
 
   public void add(ContactData contact, GroupData group) {

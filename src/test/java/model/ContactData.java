@@ -224,7 +224,8 @@ public class ContactData {
   }
 
 
-  public Object ToGroup(GroupData group) {
+  public ContactData toGroup
+          (GroupData group) {
     groups.add(group);
     return this;
   }
