@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b5e229e-8665-4a96-a590-faf0cd8f6e36" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/remote.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/app/manager/ApplicationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/app/manager/ApplicationManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactAddToGroupTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactAddToGroupTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/TestBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testng-contacts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng-contacts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testng-groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng-groups.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
