@@ -35,11 +35,17 @@ public class ApplicationManager {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
     dbHelper = new DbHelper();
-    if (browser.equals(BrowserType.CHROME)) {
+    //if (browser.equals(BrowserType.CHROME)) {
+     // wd = new ChromeDriver();
+   // } else if (browser.equals(BrowserType.FIREFOX)) {
+     // wd = new FirefoxDriver();
+  //  }
+    if (browser.equals(BrowserType.FIREFOX)) {
+      wd = new  FirefoxDriver();
+    } else if (browser.equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if (browser.equals(BrowserType.FIREFOX)) {
-      wd = new FirefoxDriver();
     }
+
     wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     wd.get(properties.getProperty("web.baseURL"));
     groupHelper = new GroupHelper(wd);
