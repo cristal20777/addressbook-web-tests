@@ -58,11 +58,15 @@ public class ContactHelper extends HelperBase {
     //attach(By.name("photo"), contactData.getPhoto());
 
     if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByIndex(1);
+      if (contactData.getGroups().size() > 0) {
+        Assert.assertTrue(contactData.getGroups().size() == 1);
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+      }
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
   }
+
 
   public void selectContacts(int index) {
     wd.findElements(By.name("selected[]")).get(index).click();
@@ -89,11 +93,13 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(By.xpath("//td/input"));
   }
 
-  public void createContact(ContactData contact) {
+  public void createContact(ContactData contact,boolean creation) {
     gotoFormNewContact();
     fillContactForm(contact, true);
     enterContactCreation();
   }
+
+
   public void modifyContact( ContactData contact) {
     editContactById(contact.getId());
     fillContactForm(contact, false);
@@ -176,8 +182,8 @@ selectContactById(contact.getId());
     click(By.cssSelector("[value='Add to']"));
   }
 
-  public void contactAddToGroup(String name) {
-    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(name);
+  public void contactAddToGroup(String nameGroup) {
+    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(nameGroup);
     click(By.xpath("//input[@name='add']"));
   }
 

@@ -6,7 +6,6 @@
             <class name="tests.GroupCreationTests" />
             <class name="tests.GroupModificationTests" />
             <class name="tests.GroupDeletionTests" />
-
         </classes>
     </test>
 </suite>

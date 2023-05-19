@@ -6,6 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="3b5e229e-8665-4a96-a590-faf0cd8f6e36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/app/manager/ApplicationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/app/manager/ApplicationManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/app/manager/ContactHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactAddToGroupTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactAddToGroupTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactCreationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactCreationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactDeletionTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactDeletionTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactModificationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactModificationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/ContactPhoneEmailAddressTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/ContactPhoneEmailAddressTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/DeleteContactFromGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/DeleteContactFromGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/tests/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/tests/TestBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/resources/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/resources/testng-groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/resources/testng-groups.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/manager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ContactData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/GroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/GroupData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactAddToGroupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactAddToGroupTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactDeletionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactDeletionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactModificationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactPhoneEmailAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactPhoneEmailAddressTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeleteContactFromGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteContactFromGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/groups.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/groups.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/groups.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/remote.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +96,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/User/Devel/addressbook-web-tests/addressbook-web-tests/src/main/java",
-    "last_opened_file_path": "C:/Users/User/Devel/java_pft/java_pft",
+    "last_opened_file_path": "C:/Users/User/Devel/java/addressbook-web-tests",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -91,7 +117,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactCreationTests">
+  <component name="RunManager" selected="TestNG.ContactAddToGroupTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="generators.GroupDataGenerator" />
       <option name="PROGRAM_PARAMETERS" value="10 scr/test/resources/groups.csv" />
@@ -298,11 +324,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactAddToGroupTest" />
+        <item itemvalue="TestNG.ContactDeletionTests" />
         <item itemvalue="TestNG.ContactCreationTests" />
         <item itemvalue="TestNG.ContactModificationTests" />
-        <item itemvalue="TestNG.ContactAddToGroupTest" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.ContactDeletionTests" />
       </list>
     </recent_temporary>
   </component>

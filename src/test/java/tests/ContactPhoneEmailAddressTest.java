@@ -17,7 +17,7 @@ public class ContactPhoneEmailAddressTest extends TestBase{
   public void ensurePreconditions() {
     app.contact().gotoHome();
     if (!app.contact().isThereAContact()) {
-      app.contact().createContact(new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail( "golikmisha1@mail.ru"));
+      app.contact().createContact(new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail( "golikmisha1@mail.ru"),false);
     }
   }
   @Test

@@ -78,7 +78,9 @@ public class GroupData {
     this.footer = footer;
     return this;
   }
-
+  public String name() {
+    return name;
+  }
   public String getName() {
     return name;
   }

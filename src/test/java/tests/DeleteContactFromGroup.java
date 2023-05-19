@@ -18,7 +18,7 @@ public class DeleteContactFromGroup extends TestBase {
     ContactData contactAddToGroup;
     if (app.db().contacts().size() == 0) {
       app.contact().gotoHome();
-      app.contact().createContact(new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail("golikmisha1@mail.ru"));
+      app.contact().createContact(new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail("golikmisha1@mail.ru"),false);
     }
 
     if (app.db().groups().size()==0) {

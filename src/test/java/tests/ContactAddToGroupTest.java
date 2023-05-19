@@ -4,7 +4,6 @@ import model.ContactData;
 import model.Contacts;
 import model.GroupData;
 import model.Groups;
-import org.hamcrest.MatcherAssert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -24,7 +23,7 @@ public class ContactAddToGroupTest extends TestBase {
     }
     if (app.db().contacts().size() == 0 || contactGroups(contacts) == null) {
       app.contact().gotoHome();
-      app.contact().createContact(new ContactData().withFirstname("Михаил").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail("golikmisha1@mail.ru"));
+      app.contact().createContact(new ContactData().withFirstname("Биг>").withLastname("Голик").withAddress("fgfj").withHomePhone("89600267885").withEmail("golikmisha1@mail.ru"),false);
     }
 
   }
@@ -33,25 +32,23 @@ public class ContactAddToGroupTest extends TestBase {
 
     Contacts contacts = app.db().contacts();
     ContactData contactGroups = contactGroups(contacts);
+    GroupData addGroup = contactAddGroup();
     Contacts before = contacts.without(contactGroups);
-    GroupData addGroup = contactNotInGroup();
     app.contact().gotoHome();
     app.contact().selectContactById(contactGroups.getId());
-    app.contact().contactAddToGroup(addGroup.getName());
+    app.contact().contactAddToGroup(addGroup.name());
     ContactData contactWithGroup = contactGroups.toGroup(addGroup);
     Contacts after = app.db().contacts();
-    assertThat(after.size(), equalTo(contacts.size()));
-    MatcherAssert.assertThat(after, equalTo(before.without(contactWithGroup)));
-    verifyContactListInUI();
+    assertThat(after, equalTo(before.withAdded(contactWithGroup)));
   }
 
-  private GroupData contactNotInGroup() {
+  private GroupData contactAddGroup() {
     Contacts contacts = app.db().contacts();
-    Groups groupInContact = contactGroups(contacts).getGroups();
-    Groups listGroups = app.db().groups();
-    listGroups.removeAll(groupInContact);
-    GroupData group = listGroups.iterator().next();
-    return group;
+    Groups groups = app.db().groups();
+    Groups groupsInContact = contactGroups(contacts).getGroups();
+    groups.removeAll(groupsInContact);
+    GroupData groupInContact = groups.iterator().next();
+    return groupInContact;
 
   }
 
